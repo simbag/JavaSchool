@@ -1,6 +1,7 @@
 package com.sbt.javaschool.intro;
 
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class JavaIntroduction {
 
@@ -70,6 +71,9 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Заданы a и b. Выведите a+b.
+     */
     public static void task2001() {
         Scanner in = new Scanner(System.in);
 
@@ -80,6 +84,9 @@ public class JavaIntroduction {
 
     }
 
+    /**
+     * Задано n целых чисел. Выведите их сумму.
+     */
     public static void task2002() {
         Scanner in = new Scanner(System.in);
 
@@ -92,6 +99,9 @@ public class JavaIntroduction {
         System.out.println(sum);
     }
 
+    /**
+     * По заданной последовательности целых чисел выведите ее альтернированную сумму.
+     */
     public static void task2003() {
         Scanner in = new Scanner(System.in);
 
@@ -106,6 +116,13 @@ public class JavaIntroduction {
         System.out.println(sum);
     }
 
+    /**
+     *
+     Задан номер года y. Ваша задача вывести 1, если год високосный. Выведите 0 в противном случае.
+     Год является високосным, если он кратен 4 и при этом не кратен 100, либо кратен 400.
+     Так, годы 1700, 1800 и 1900 не были високосными, так как они кратны 100 и не кратны 400.
+     Год 2000 — високосный, так как он кратен 400. 2100, 2200 и 2300 — не високосные.
+     */
     public static void task2004() {
         Scanner in = new Scanner(System.in);
 
@@ -117,6 +134,10 @@ public class JavaIntroduction {
             System.out.println(0);
     }
 
+    /**
+     * Заданы n целых чисел. Выведите индекс (позицию) первого из минимальных элементов последовательности.
+     * Элементы последовательности занумерованы от 1 слева направо.
+     */
     public static void task2005() {
         Scanner in = new Scanner(System.in);
 
@@ -133,6 +154,10 @@ public class JavaIntroduction {
         System.out.println(minInd);
     }
 
+    /**
+     * Простое число — это натуральное число, которое имеет ровно два различных натуральных делителя: единицу и самого себя. Последовательность простых чисел начинается так: 2, 3, 5, 7, 11, 13, 17, 19, 23,...
+     * Напишите программу, которая выведет все простые числа на отрезке [1,n] в порядке возрастания.
+     */
     public static void task2015() {
         Scanner in = new Scanner(System.in);
 
@@ -151,6 +176,11 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Вспомогательная функция для задачи 2021. Находит максимальный элемент в массиве.
+     * @param array массив, в котором необходимо найти максимум
+     * @return - int значение максимального элемента массива
+     */
     public static int findMax(int[] array) {
         int max = array[0];
 
@@ -161,6 +191,11 @@ public class JavaIntroduction {
         return max;
     }
 
+    /**
+     * Задан массив из n чисел (a1, a2,..., an).
+     С ним два раза повторяют следующую процедуру: одновременно все максимумы в массиве делят на два.
+     Нечетные числа при делении на два следует округлять вниз. Ваша задача — вывести массив после этих действий.
+     */
     public static void task2021() {
         Scanner in = new Scanner(System.in);
 
@@ -184,6 +219,10 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Задан массив n целых чисел (a1, a2,..., an). Ваша задача — найти количество пар индексов (i, j), что i ≠ j и ai делит aj.
+     * Обратите внимание, что пары (i, j) и (j, i) считаются различными.
+     */
     public static void task2022() {
         Scanner in = new Scanner(System.in);
 
@@ -207,6 +246,10 @@ public class JavaIntroduction {
         System.out.println(result);
     }
 
+    /**
+     * Заданы два массива целых положительных чисел: a и b. Ваша задача сформировать такой массив c, содержащий все элементы массива a, которые встречаются в b.
+     * В массиве c элементы должны идти в том же порядке, что и a, просто пропускайте те элементы, что не присутству
+     */
     public static void task2023() {
         Scanner in = new Scanner(System.in);
 
@@ -244,6 +287,11 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Заданы два массива целых положительных чисел: a и b.
+     * Ваша задача сформировать такой массив c, содержащий все элементы массива a, которые встречаются в b.
+     * В массиве c элементы должны идти в том же порядке, что и a, просто пропускайте те элементы, что не присутству
+     */
     public static void task2024() {
         Scanner in = new Scanner(System.in);
 
@@ -264,6 +312,11 @@ public class JavaIntroduction {
 
     }
 
+    /**
+     * Рассмотрим простой вариант задачи RMQ (Range Minimum Query, запрос минимума на подмассиве).
+     Задан массив из n целых чисел (a1, a2,..., an) и m запросов вида (li, ri) (1 ≤ li ≤ ri ≤ n).
+     Ваша задача — на каждый запрос вывести минимальный среди элементов с индексами от li до ri включительно.
+     */
     public static void task2025() {
         Scanner in = new Scanner(System.in);
 
@@ -292,6 +345,11 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Задан массив a. Требуется каждый его элемент заменить на ближайший справа больший.
+     * Результаты замен не влияют на другие, то есть считайте, что все замены производятся одновременно.
+     * Если справа нет большего элемента, то замените элемент на число 0.
+     */
     public static void task2026() {
         Scanner in = new Scanner(System.in);
 
@@ -319,11 +377,21 @@ public class JavaIntroduction {
         }
     }
 
+    /**
+     * Дан набор из n слов, состоящих из маленьких латинских букв.
+
+     Будем называть слово странным, если в нем встречаются 3 или более гласные буквы подряд.
+
+     Ваша задача — удалить из данного набора все странные слова.
+
+     Гласными буквами в латинском алфавите считаются e,y,u,i,o,a.
+
+     */
     public static void task2036() {
         Scanner in = new Scanner(System.in);
 
         int count = in.nextInt();
-        String result = "";
+        StringJoiner result = new StringJoiner("\n");
 
         for (int i = 0; i < count; i++) {
             String str = in.next();
@@ -338,37 +406,42 @@ public class JavaIntroduction {
 
             }
             if (letterCount != 3)
-                result += str + '\n';
+                result.add(str);
         }
         System.out.println(result);
     }
 
+    /**
+     *
+     Дан текст, состоящий только из маленьких латинских букв и запятых.
+     Последовательность подряд идущих букв, окруженную запятыми (началом, концом строки), назовем словом. Слово может быть пустым.
+
+     Ваша задача — удалить из текста все слова короче k символов.
+     */
     public static void task2037() {
         Scanner in = new Scanner(System.in);
 
         String str = in.next();
         int minLength = in.nextInt();
-        String cur = "";
-        String result = "";
 
-        str += ',';
+        String[] words = str.split(",", -1);
+        StringJoiner result = new StringJoiner(",");
 
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == ',') {
-                if (cur.length() >= minLength) {
-                    if (result == "")
-                        result += cur;
-                    else
-                        result += "," + cur;
-                }
-                cur = "";
-            } else
-                cur += str.charAt(i);
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() >= minLength) {
+                result.add(words[i]);
+            }
         }
 
         System.out.println(result);
     }
 
+    /**
+     * Определим слово как последовательность латинских букв алфавита. Все остальные символы являются разделителями.
+
+     Дан текст, состоящий из символов с номерами от 32 до 127 (см. таблицу символов ASCII).
+     Ваша задача — найти количество букв в наидлинейшем слове из этого текста.
+     */
     public static void task2038() {
         Scanner in = new Scanner(System.in);
 
@@ -385,6 +458,12 @@ public class JavaIntroduction {
         System.out.println(maxLength);
     }
 
+    /**
+     * Определим слово как последовательность латинских букв алфавита. Все остальные символы являются разделителями.
+
+     Дан текст, состоящий из символов с номерами от 32 до 127 (см. таблицу символов ASCII).
+     Ваша задача — подсчитать количество слов в этом тексте.
+     */
     public static void task2039() {
         Scanner in = new Scanner(System.in);
 
@@ -401,6 +480,11 @@ public class JavaIntroduction {
         System.out.println(result);
     }
 
+    /**
+     * Циклическим сдвигом на k строки p = (p1, p2,..., pn) называется строка pk = (pk+1, pk+2,..., pn, p1,..., pk).
+
+     Ваша задача — найти наименьший в лексикографическом порядке сдвиг данной строки.
+     */
     public static void task2040() {
         Scanner in = new Scanner(System.in);
 
@@ -416,6 +500,11 @@ public class JavaIntroduction {
         System.out.println(min);
     }
 
+    /**
+     * Вспомогательная функция для задания 2041. Проверяет, является ли строка палиндромом.
+     * @param str строка, которую необходимо проверить
+     * @return - true, если строка является палиндромом, false - в противном случае
+     */
     public static boolean isPalindome(String str) {
         for (int i = 0; i < str.length() / 2; i++) {
             if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
@@ -425,6 +514,16 @@ public class JavaIntroduction {
         return true;
     }
 
+    /**
+     * Строка называется палиндромом, если она читается справа налево и слева направо одинаково.
+     * Например, "abacaba" — палиндром, а "abac" — нет.
+
+     Конкатенацией двух строк называется строка, представляющий собой сначала записанную первую строку, потом вторую.
+     Например, "ad" + "caba" = "adcaba".
+
+     Дана строка, состоящая только из строчных латинских букв.
+     Ваша задача проверить, является ли эта строка конкатенацией двух палиндромов. Обратите внимание, что пустая строка также является палиндромом.
+     */
     public static void task2041() {
         Scanner in = new Scanner(System.in);
 
@@ -441,6 +540,12 @@ public class JavaIntroduction {
         System.out.println(result);
     }
 
+    /**
+     * Дан текст, состоящий из строчных латинских букв, и шаблон, состоящий из строчных латинских букв и знаков вопроса.
+     * Знак вопроса может обозначить любую букву. Например, строки "abaca" и "??ac?" равны, а "aba" и "?c?" — нет.
+
+     Ваша задача — вывести все позиции вхождения шаблона в текст.
+     */
     public static void task2042() {
         Scanner in = new Scanner(System.in);
 
