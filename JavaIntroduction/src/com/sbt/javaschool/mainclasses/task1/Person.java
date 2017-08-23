@@ -1,4 +1,4 @@
-package com.sbt.javaschool.mainclasses;
+package com.sbt.javaschool.mainclasses.task1;
 
 public class Person {
     private final boolean man;
