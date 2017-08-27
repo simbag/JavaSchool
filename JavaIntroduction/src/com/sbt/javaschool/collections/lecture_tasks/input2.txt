@@ -1,0 +1,4 @@
+Collection Collections Class Class Class
+List ArrayList LinkedList
+Queue Queue Dequeue PrioryQueue
+Map SetMap HashMap, ,SetMap TreeSet TreeSet TreeMap
