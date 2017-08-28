@@ -1,45 +1,51 @@
 package com.sbt.javaschool.collections.lecture_tasks;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task2 {
 
     public static void main(String[] args) {
 
-        List<String> lines = new ArrayList<>();
+        String str = "";
 
         try {
-            lines =
-                    (Files.readAllLines(
-                            Paths.get("D:\\JavaSchool\\JavaIntroduction\\JavaIntroduction\\src\\com\\sbt\\javaschool\\collections\\lecture_tasks\\input2.txt")));
-        } catch (IOException e) {
+            Scanner scanner = new Scanner(new File("resources/input.txt")).useDelimiter("\\Z");
+            str = scanner.next();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        TreeSet<String> words = new TreeSet<>(new Comparator<String>() {
+        Comparator<String> lengthComparator = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                if (o1.length() == o2.length()) {
-                    return o1.compareTo(o2);
+                if (o1.length() < o2.length()) {
+                    return -1;
                 } else if (o1.length() > o2.length()) {
                     return 1;
-                } else {
-                    return -1;
-                }
+                } else return 0;
             }
-        });
+        };
 
-        for (String line : lines) {
-            words.addAll(Arrays.asList(line.split("[^a-zA-Z]")));
-            words.removeAll(Arrays.asList(""));
+        Comparator<String> stringComparator = new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        };
+
+        TreeSet<String> words = new TreeSet<>(lengthComparator.thenComparing(stringComparator));
+
+        Pattern pattern = Pattern.compile("[a-zA-Z]+");
+        Matcher matcher = pattern.matcher(str);
+
+        while (matcher.find()) {
+            words.add(matcher.group());
         }
 
-        for (String line : lines) {
-            System.out.println(words.toString());
-        }
+        System.out.println(words);
     }
 }

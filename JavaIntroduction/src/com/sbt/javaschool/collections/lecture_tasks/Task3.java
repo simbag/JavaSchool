@@ -1,36 +1,35 @@
 package com.sbt.javaschool.collections.lecture_tasks;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task3 {
 
     public static void main(String[] args) {
 
-        List<String> lines = new ArrayList<>();
+        String str = "";
 
         try {
-            lines =
-                    (Files.readAllLines(
-                            Paths.get("D:\\JavaSchool\\JavaIntroduction\\JavaIntroduction\\src\\com\\sbt\\javaschool\\collections\\lecture_tasks\\input2.txt")));
-        } catch (IOException e) {
+            Scanner scanner = new Scanner(new File("resources/input.txt")).useDelimiter("\\Z");
+            str = scanner.next();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        ArrayList<String> allWords = new ArrayList<>();
-        HashSet<String> words = new HashSet<>();
+        HashMap<String,Integer> result = new HashMap<>();
 
-        for (String line : lines) {
-            allWords.addAll(Arrays.asList(line.split("[^a-zA-Z]")));
-            allWords.removeAll(Arrays.asList(""));
-            words.addAll(allWords);
+        Pattern pattern = Pattern.compile("[a-zA-z]+");
+        Matcher matcher = pattern.matcher(str);
+
+        while(matcher.find()){
+            String word = matcher.group();
+            int count = result.getOrDefault(word,0);
+            result.put(word,++count);
         }
 
-        for (String word : words) {
-            System.out.println(word + ": " + Collections.frequency(allWords, word));
-        }
+        System.out.println(result);
     }
 }

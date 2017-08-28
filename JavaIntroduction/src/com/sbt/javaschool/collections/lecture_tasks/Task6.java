@@ -1,7 +1,6 @@
 package com.sbt.javaschool.collections.lecture_tasks;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -15,7 +14,7 @@ public class Task6 {
         try {
             lines =
                     (Files.readAllLines(
-                            Paths.get("D:\\JavaSchool\\JavaIntroduction\\JavaIntroduction\\src\\com\\sbt\\javaschool\\collections\\lecture_tasks\\input2.txt")));
+                            Paths.get("resources/input.txt")));
         } catch (IOException e) {
             e.printStackTrace();
         }
