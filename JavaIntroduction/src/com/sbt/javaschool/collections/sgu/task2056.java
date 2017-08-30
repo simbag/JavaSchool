@@ -1,17 +1,17 @@
 package com.sbt.javaschool.collections.sgu;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class task2056 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(System.in).useDelimiter("\\z");
+        Scanner scanner = new Scanner(new File("input.txt")).useDelimiter("\\Z");
 
         String str = scanner.next();
-
-        System.out.println(str);
 
         str = str.toLowerCase();
 
@@ -23,7 +23,7 @@ public class task2056 {
         while (matcher.find()) {
             String word = matcher.group();
             int count = words.getOrDefault(word, 0);
-            words.put(word, ++count);
+            words.put(word, count + 1);
         }
 
         int max = Collections.max(words.values());
