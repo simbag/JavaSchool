@@ -1,6 +1,5 @@
 package com.sbt.javaschool.exceptions;
 
-import java.io.IOException;
 import java.net.ConnectException;
 
 public class TerminalImpl implements Terminal {
