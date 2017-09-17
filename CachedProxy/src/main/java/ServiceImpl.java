@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceImpl implements Service, Serializable {
+public class ServiceImpl implements Service {
 
     public List<String> run(String item, double value, Date date) {
         List<String> result = new ArrayList<>();
