@@ -4,6 +4,8 @@ public class StudentVisit {
     Integer id;
     Integer StudentId;
     Integer LessonId;
+    Student student;
+    Lesson lesson;
 
     public Integer getId() {
         return id;

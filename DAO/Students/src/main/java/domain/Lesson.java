@@ -1,11 +1,13 @@
 package domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Lesson {
     Integer id;
     String name;
     Date date;
+    List<StudentVisit> visits;
 
     public Integer getId() {
         return id;

@@ -14,7 +14,7 @@ public class StudentH2DaoService extends AbstractH2DaoService implements Student
 
     public Student getStudentById(Integer id) throws DaoException {
         try (Connection connection = getConnection(CONNECT_URL);
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM SCHOOL.STUDENTS WHERE id = ?");
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM STUDENTS WHERE id = ?");
         ) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();

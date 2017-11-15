@@ -9,12 +9,12 @@ import java.sql.SQLException;
 
 public class AbstractH2DaoService {
 
-    public static final String CONNECT_URL = "jdbc:h2:~/test";
+    public static final String CONNECT_URL = "jdbc:h2:tcp://localhost/~/test";
 
     protected Connection getConnection(String url) throws DaoException {
         try {
             Class.forName("org.h2.Driver");
-            return DriverManager.getConnection(CONNECT_URL);
+            return DriverManager.getConnection(CONNECT_URL,"sa",null);
         } catch (ClassNotFoundException e) {
             System.out.println("Driver exception!");
             e.printStackTrace();
